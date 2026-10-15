@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SysCompras | Sistema de Compras Profissional</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>
+      <i class="fas fa-cart-shopping"></i> 
+      SysCompras
+    </h1>
+
+    <div class="grid-layout">
+      <!-- Painel de entrada -->
+      <div class="purchase-panel">
+        <div class="input-group">
+          <label for="valorCompra">
+            <i class="fas fa-tag"></i> Valor da compra
+          </label>
+          <div class="input-wrapper">
+            <span class="currency-symbol">R$</span>
+            <input type="number" id="valorCompra" placeholder="0,00" min="0" step="0.01" value="100.00">
+          </div>
+        </div>
+
+        <button class="btn-calculate" id="calcularBtn">
+          <i class="fas fa-calculator"></i> Calcular compra
+        </button>
+
+        <!-- Regras de desconto -->
+        <div class="rules-badge">
+          <div class="rule-item"><i class="fas fa-percent"></i> R$ 100 - R$ 1.988 → 5%</div>
+          <div class="rule-item"><i class="fas fa-percent"></i> Acima de R$ 1.989 → 10%</div>
+        </div>
+      </div>
+
+      <!-- Painel de resultado -->
+      <div class="summary-panel" id="summaryPanel">
+        <div class="summary-title">
+          <i class="fas fa-receipt"></i> Resumo da compra
+        </div>
+        <div id="resultadoContainer">
+          <div class="empty-message">
+            <i class="fas fa-calculator"></i>
+            Informe o valor e clique em calcular
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      <span><i class="fas fa-check-circle"></i> Descontos automáticos</span>
+      <span><i class="fas fa-shield-alt"></i> Cálculo seguro</span>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

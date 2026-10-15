@@ -1,0 +1,343 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  
+  body {
+    background: linear-gradient(145deg, #eef2f7 0%, #f8fafd 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+  }
+  
+  .container {
+    max-width: 1200px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 2.5rem;
+    box-shadow: 0 30px 50px -15px rgba(0, 20, 30, 0.25), 
+                inset 0 1px 2px rgba(255, 255, 255, 0.7);
+    padding: 2rem 2.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    transition: all 0.2s ease;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #0a2540;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.75rem;
+    border-bottom: 2px solid rgba(0, 80, 150, 0.1);
+    padding-bottom: 1rem;
+  }
+  
+  h1 i {
+    color: #1e6f9f;
+    font-size: 2.2rem;
+    background: #e1edf7;
+    padding: 0.5rem;
+    border-radius: 1.2rem;
+  }
+  
+  .grid-layout {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 2.5rem;
+  }
+  
+  /* Painel esquerdo — formulário */
+  .purchase-panel {
+    background: #ffffff;
+    border-radius: 1.8rem;
+    padding: 1.8rem 2rem;
+    box-shadow: 0 8px 18px -8px rgba(0, 25, 45, 0.12);
+    border: 1px solid #e2edf5;
+  }
+  
+  .input-group {
+    margin-bottom: 2rem;
+  }
+  
+  .input-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 500;
+    color: #1a3a4e;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    letter-spacing: 0.01em;
+  }
+  
+  .input-group label i {
+    color: #1e6f9f;
+    font-size: 1.2rem;
+    width: 1.5rem;
+  }
+  
+  .input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .currency-symbol {
+    position: absolute;
+    left: 1.2rem;
+    font-weight: 600;
+    color: #1e6f9f;
+    font-size: 1.3rem;
+    pointer-events: none;
+  }
+  
+  #valorCompra {
+    width: 100%;
+    padding: 1.1rem 1rem 1.1rem 3.2rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+    border: 2px solid #d9e6f0;
+    border-radius: 1.4rem;
+    background: #f9fcff;
+    color: #0a1e2b;
+    outline: none;
+    transition: all 0.2s ease;
+    letter-spacing: 0.5px;
+  }
+  
+  #valorCompra:focus {
+    border-color: #1e6f9f;
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(30, 111, 159, 0.15);
+  }
+  
+  /* Botão calcular */
+  .btn-calculate {
+    width: 100%;
+    background: #0a2540;
+    color: white;
+    border: none;
+    border-radius: 1.4rem;
+    padding: 1.1rem 1.8rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 15px 20px -12px rgba(10, 37, 64, 0.4);
+    margin-top: 1rem;
+    letter-spacing: 0.3px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .btn-calculate i {
+    font-size: 1.2rem;
+  }
+  
+  .btn-calculate:hover {
+    background: #1c4b6e;
+    transform: scale(1.01);
+    box-shadow: 0 20px 25px -12px #0a2540;
+  }
+  
+  .btn-calculate:active {
+    transform: scale(0.99);
+    background: #082032;
+  }
+  
+  /* Regras de desconto visual */
+  .rules-badge {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin-top: 1.8rem;
+    border-top: 1px dashed #cbdae6;
+    padding-top: 1.5rem;
+  }
+  
+  .rule-item {
+    background: #e9f2fa;
+    border-radius: 2rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #1e4d6b;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    border: 1px solid #c3dcf0;
+  }
+  
+  .rule-item i {
+    color: #1e6f9f;
+    font-size: 0.9rem;
+  }
+  
+  /* Painel direito — resumo */
+  .summary-panel {
+    background: #ffffff;
+    border-radius: 1.8rem;
+    padding: 1.8rem 2rem;
+    box-shadow: 0 8px 18px -8px rgba(0, 25, 45, 0.12);
+    border: 1px solid #e2edf5;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .summary-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #0a2540;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #e3eef7;
+  }
+  
+  .summary-title i {
+    color: #1e6f9f;
+  }
+  
+  .result-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0.5rem;
+    border-bottom: 1px solid #eaf1f8;
+    font-size: 1.05rem;
+    color: #1e3b4e;
+  }
+  
+  .result-line:last-of-type {
+    border-bottom: none;
+  }
+  
+  .result-line.highlight {
+    background: #f2f9ff;
+    border-radius: 1rem;
+    margin: 0.5rem 0;
+    padding: 1.1rem 0.9rem;
+    border-left: 5px solid #1e6f9f;
+    font-weight: 600;
+  }
+  
+  .result-label {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 500;
+  }
+  
+  .result-label i {
+    width: 1.5rem;
+    color: #2679a8;
+  }
+  
+  .result-value {
+    font-weight: 600;
+    color: #0a2540;
+    font-size: 1.2rem;
+  }
+  
+  .result-value.positive {
+    color: #1a7e4b;
+  }
+  
+  .result-value.negative {
+    color: #b13e3e;
+  }
+  
+  .result-value.big {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #0a3a5c;
+  }
+  
+  .empty-message {
+    color: #8ba3b5;
+    text-align: center;
+    padding: 2rem 0;
+    font-style: italic;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  
+  .empty-message i {
+    font-size: 2.2rem;
+    opacity: 0.5;
+  }
+  
+  .badge-desconto {
+    background: #1e6f9f;
+    color: white;
+    border-radius: 2rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.8rem;
+    margin-left: 0.5rem;
+    letter-spacing: 0.3px;
+  }
+  
+  /* rodapé */
+  .footer-note {
+    margin-top: 1.8rem;
+    font-size: 0.8rem;
+    color: #8ba3b5;
+    text-align: center;
+    border-top: 1px solid #d9e6f0;
+    padding-top: 1.2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+  }
+  
+  .footer-note span i {
+    margin-right: 0.3rem;
+    color: #1e6f9f;
+  }
+  
+  /* Responsivo */
+  @media (max-width: 850px) {
+    .container {
+      padding: 1.5rem;
+    }
+    .grid-layout {
+      grid-template-columns: 1fr;
+      gap: 1.8rem;
+    }
+    h1 {
+      font-size: 1.7rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      padding: 1rem;
+    }
+    .purchase-panel, .summary-panel {
+      padding: 1.5rem;
+    }
+    .result-value.big {
+      font-size: 1.7rem;
+    }
+    .btn-calculate {
+      font-size: 1rem;
+    }
+  }
